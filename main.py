@@ -47,9 +47,21 @@ rotate_form = '''
         <input type="submit"/>
     </form>
 '''
-@app.route('/rotate' methods=['POST'])
-def 
-    
+
+@app.route("/rotate", methods=['POST'])
+def rotate_char():
+
+    num = request.form['rot']
+    char = request.form['text']
+
+    solution = encrypt(str(char), int(num))
+
+    display = "<h1>" + solution + "</h1>"
+
+    content = page_header + display + page_footer
+
+    return content
+
 
 
 @app.route('/')
