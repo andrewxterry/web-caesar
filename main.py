@@ -1,4 +1,5 @@
-from flask import Flask, redirect
+from caesar import rotate_character, encrypt
+from flask import Flask, request
 
 app = Flask(__name__)
 app.config['DEBUG'] = True 
@@ -46,8 +47,9 @@ rotate_form = '''
         <input type="submit"/>
     </form>
 '''
-
-
+@app.route('/rotate' methods=['POST'])
+def 
+    
 
 
 @app.route('/')
