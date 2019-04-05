@@ -11,24 +11,23 @@ page_header = '''
     <html>
         <head>
             <style>
-                body{{
+                body{
                     display: block;
-                }}
-                form {{
+                    }
+                form {
                     background-color: #eee;
                     padding: 20px;
                     margin: 0 auto;
                     width: 540px;
                     font: 16px sans-serif;
                     border-radius: 10px;
-                }}
-
-                .textarea {{
+                }
+                textarea {
                     margin: 10px 0;
                     width: 540px;
                     height: 120px;
                     display: block;
-                }}
+                }
             </style>
         </head>
         <body>
@@ -46,7 +45,7 @@ rotate_form = '''
         <input type="text" name="rot" placeholder="0"/> 
         </label>
         <br>
-        <textarea class="textarea" name="text">{0}</textarea>
+        <textarea class="textarea" name="text">{cipher}</textarea>
 
         <input type="submit"/>
     </form>
@@ -64,13 +63,13 @@ def rotate_char():
 
     # content = page_header + display + page_footer
 
-    return rotate_form.format(solution)
+    return page_header + rotate_form.format(cipher = solution) + page_footer
 
 
 
 @app.route('/') 
 def index():
-    content = page_header + rotate_form.format("") + page_footer
+    content = page_header + rotate_form.format(cipher = "") + page_footer
 
     return content
 
